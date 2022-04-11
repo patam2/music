@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion'
-import ShowModal from './playlistCreationModal';
-import ReactDOM from 'react-dom';
 
 function getPlayListTracks(playlist_id) {
     var tracks = []
@@ -21,7 +19,7 @@ export const ClickButton = (props) => {
             'headers': {'Content-Type': 'application/json'},
             'body': JSON.stringify({'playlist_name': name, 'playlist_id': key})
         }).then(resp => resp.json())
-            .then(resp => props.urlSetterFunction(resp.url)
+            .then(resp => props.urlSetterFunction(resp.url))
             //.then(resp => window.location = resp.url)
     }
     return (

@@ -5,6 +5,7 @@ src/settings.json
 scripts/flow/*/.flowconfig
 .flowconfig
 *.pyc
+music/api/venv/
 .grunt
 _SpecRunner.html
 __benchmarks__
