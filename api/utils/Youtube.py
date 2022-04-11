@@ -57,7 +57,7 @@ class Youtube(YoutubeAuth):
             headers={"Authorization": f"Bearer {access_token}"},
             json={"snippet": {"title": title}},
         ).json()
-        print(req)
+        #print(req)
         if 'error' in req:
             if req['error']['code'] == 401:
                 raise YoutubeAccountNotMade('Youtube account not created. Sign in with your brand account.')
@@ -68,7 +68,7 @@ class Youtube(YoutubeAuth):
             url=f"https://youtube.googleapis.com/youtube/v3/search?part=snippet&q={query}&key={self.api_key}",
             headers={"Authorization": f"Bearer {access_token}"},
         ).json()
-        print(req)
+        #print(req)
         return req["items"][0]
 
     def add_to_playlist(self, access_token, playlist_id, video_id):
